@@ -1,0 +1,15 @@
+public int repeatedNumber(final List<Integer> list) {
+  if (list.size() <= 1) {
+    return -1;
+  }
+
+  for (int i = 0; i < list.size(); i++) {
+    if (list.get(Math.abs(list.get(i))) > 0) {
+      list.set(Math.abs(list.get(i)), -1 * list.get(Math.abs(list.get(i))));
+    } else {
+      return Math.abs(list.get(i));
+    }
+  }
+
+  return 0;
+}
