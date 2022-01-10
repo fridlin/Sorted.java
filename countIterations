@@ -1,0 +1,19 @@
+//Count Iterations
+public int repeatedNumber(final List<Integer> list) {
+  if(list.size() <= 1) {
+    return -1;
+  }
+  
+  int[] count = new int[list.size() - 1];
+
+  for (int i = 0; i < list.size(); i++) {
+    int n = list.get(i) - 1;
+    count[n]++;
+
+    if (count[n] > 1) {
+      return list.get(i);
+    }
+  }
+
+  return -1;
+}
